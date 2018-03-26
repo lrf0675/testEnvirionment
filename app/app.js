@@ -1,12 +1,26 @@
-const express = require('express');
-const app = express();
-const users = require('./users');
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
 
-app.get('/', function(req, res){
-    console.log(users());
-   res.send();
+
+var users = require('./users');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+var port = process.env.PORT || 9090;
+var router = express.Router();
+
+router.get('/', function(req, res) {
+  res.json({ message: 'Express & API Gateway!' });
 });
 
-app.listen(9090,function(){
-    console.log('App listening on port 9090');
-})
+router.route('/user/:userId').get(function(req,res){
+  users.getUsers(req,res)
+});
+
+app.use('/',router);
+
+
+app.listen(port);
+console.log('App listening on port 9090');

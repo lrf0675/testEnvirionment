@@ -4,13 +4,25 @@
   "description": "Testing Environment",
   "main": "app/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc --reporter=lcov --reporter=text mocha",
+    "start": "node app/app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "chai": "^4.1.2",
     "express": "^4.16.3",
-    "mocha": "^5.0.5"
+    "mocha": "^5.0.5",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "mocha-simple-html-reporter": "^1.1.0",
+    "nyc": "^11.6.0",
+    "sinon": "^4.4.8",
+    "sinon-chai": "^3.0.0",
+    "sinon-express-mock": "^2.0.0"
   }
 }
