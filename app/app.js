@@ -24,3 +24,5 @@ app.use('/',router);
 
 app.listen(port);
 console.log('App listening on port 9090');
+
+module.exports = app;

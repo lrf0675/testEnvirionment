@@ -5,6 +5,7 @@
   "main": "app/app.js",
   "scripts": {
     "test": "nyc --reporter=lcov --reporter=text mocha",
+    "testHtmlReporter": "./node_modules/.bin/mocha --reporter mocha-simple-html-reporter --reporter-options output=coverage/report.html",
     "start": "node app/app.js"
   },
   "author": "",
@@ -18,6 +19,7 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
+    "chai-http": "^4.0.0",
     "coveralls": "^3.0.0",
     "mocha-simple-html-reporter": "^1.1.0",
     "nyc": "^11.6.0",
