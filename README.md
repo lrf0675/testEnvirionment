@@ -1,4 +1,4 @@
-## The purpose of this project is to demonstrate unit testing in node JS for CI'/CD ## 
+## The purpose of this project is to demonstrate unit testing in node JS for CI/CD ## 
 
 To start
 
